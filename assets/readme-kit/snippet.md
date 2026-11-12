@@ -8,6 +8,12 @@ Markup for every card, in profile order. Copy what you need into your README; pa
 <img src="assets/readme-kit/terminal.svg" width="100%" alt="Terminal: whoami, cat stack.txt, git status" />
 
 <picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/readme-kit/header-about-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/readme-kit/header-about-light.svg">
+  <img src="assets/readme-kit/header-about-dark.svg" width="100%" alt="About Me" />
+</picture>
+
+<picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/readme-kit/header-stack-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="assets/readme-kit/header-stack-light.svg">
   <img src="assets/readme-kit/header-stack-dark.svg" width="100%" alt="Tech Stack" />
