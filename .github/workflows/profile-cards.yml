@@ -1,0 +1,62 @@
+# Renders every card on the profile README and commits them in one go:
+#   - readme-kit cards from profile.yml  -> assets/readme-kit/
+#   - GitHub stats cards (4 variants)    -> assets/github-stats*.svg
+name: Profile cards
+
+on:
+  push:
+    branches: [main]
+    paths: [profile.yml, .github/workflows/profile-cards.yml]
+  schedule:
+    - cron: "0 6 * * *" # daily at 06:00 UTC (11:30 IST) for fresh stats
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: profile-cards
+  cancel-in-progress: false
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Render readme-kit cards
+        uses: Sagargupta16/readme-kit-action@v1
+
+      - name: Stats card (dark, wide)
+        uses: Sagargupta16/github-stats-card-action@v1
+        with:
+          accent: "#a78bfa"
+      - name: Stats card (light, wide)
+        uses: Sagargupta16/github-stats-card-action@v1
+        with:
+          theme: light
+          accent: "#a78bfa"
+          output: assets/github-stats-light.svg
+      - name: Stats card (dark, compact)
+        uses: Sagargupta16/github-stats-card-action@v1
+        with:
+          layout: compact
+          accent: "#a78bfa"
+          output: assets/github-stats-compact.svg
+      - name: Stats card (light, compact)
+        uses: Sagargupta16/github-stats-card-action@v1
+        with:
+          theme: light
+          layout: compact
+          accent: "#a78bfa"
+          output: assets/github-stats-compact-light.svg
+
+      - name: Commit cards if they changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: refresh profile cards"
+            git push
+          fi

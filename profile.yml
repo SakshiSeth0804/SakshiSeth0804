@@ -1,0 +1,82 @@
+# readme-kit profile: the animated cards on my GitHub profile README.
+# Edit this file and push; the "Profile cards" workflow re-renders everything
+# into assets/readme-kit/. Format: https://github.com/Sagargupta16/readme-kit-action
+#
+# Sections not here yet (add when you have content): timeline (education/career),
+# projects (one card per project), tiles, panels.
+
+theme:
+  accent: "#a78bfa" # violet
+
+hero:
+  name: Sakshi Seth
+  kicker: Hi, I am
+  role: Software developer
+  taglines:
+    - Software developer
+    - Python, JavaScript and TypeScript
+    - Building Android apps in Java and Kotlin
+    - Writing C and C++ close to the metal
+    - Exploring AI-assisted development
+  status: Open to collaborate
+  constellation:
+    hub: DEV
+    nodes: [PY, JS, TS, KT, C++]
+
+terminal:
+  prompt: "sakshi@dev:~$"
+  title: "sakshi@dev: ~"
+  commands:
+    - command: whoami
+      output:
+        - "Sakshi Seth  |  Software developer"
+    - command: cat stack.txt
+      color: sky
+      output:
+        - "Python  |  JavaScript  |  TypeScript  |  Java  |  Kotlin  |  C  |  C++"
+    - command: git status
+      color: green
+      output:
+        - "On branch main: always learning, always shipping"
+
+headers:
+  - title: Tech Stack
+    subtitle: what I work with
+    key: stack
+  - title: GitHub Stats
+    subtitle: activity and contributions
+    key: stats
+  - title: Connect With Me
+    subtitle: where to find me
+    key: connect
+
+divider: true
+
+stats:
+  - github: repos
+    value: 1
+    label: public repositories
+    color: sky
+  - github: stars
+    value: 0
+    label: stars earned
+    color: amber
+  - github: followers
+    value: 0
+    label: followers
+    color: green
+  - github: merged-prs
+    value: 0
+    label: merged pull requests
+
+buttons:
+  - label: GitHub
+    icon: github
+    url: https://github.com/SakshiSeth0804
+
+footer:
+  kicker: Sakshi Seth  |  Software developer
+  lines:
+    - Thanks for visiting
+    - Open to collaboration
+    - "Let's build something great"
