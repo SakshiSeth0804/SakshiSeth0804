@@ -40,6 +40,9 @@ terminal:
         - "On branch main: always learning, always shipping"
 
 headers:
+  - title: About Me
+    subtitle: who I am
+    key: about
   - title: Tech Stack
     subtitle: what I work with
     key: stack

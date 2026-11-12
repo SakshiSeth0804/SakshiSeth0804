@@ -27,6 +27,12 @@ jobs:
       - name: Render readme-kit cards
         uses: Sagargupta16/readme-kit-action@v1
 
+      # readme-kit draws the footer for dark mode only (light text, no background), so it
+      # vanishes on GitHub's light theme. Derive a light copy with the text color of the
+      # light section headers; the README swaps it in with <picture>.
+      - name: Footer card (light)
+        run: sed 's/#f3f4f6/#0b1012/g' assets/readme-kit/footer.svg > assets/footer-light.svg
+
       - name: Stats card (dark, wide)
         uses: Sagargupta16/github-stats-card-action@v1
         with:
