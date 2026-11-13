@@ -33,7 +33,7 @@ Markup for every card, in profile order. Copy what you need into your README; pa
 
 <img src="assets/readme-kit/divider.svg" width="100%" alt="" />
 
-<img src="assets/readme-kit/stats.svg" width="100%" alt="Stats: 1 public repositories; 0 stars earned; 0 followers; 0 merged pull requests" />
+<img src="assets/readme-kit/stats.svg" width="100%" alt="Stats: 1 public repositories; 0 stars earned; 1 followers; 0 merged pull requests" />
 
 <p align="center">
 <a href="https://github.com/SakshiSeth0804"><img src="assets/readme-kit/button-github.svg" height="44" alt="GitHub" /></a>
